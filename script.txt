@@ -1,0 +1,22 @@
+
+echo "Current Config ======= ${CONFIGURATION}"
+
+if [ "${CONFIGURATION}" == "Debug" ] || [ "${CONFIGURATION}" == "Release" ] || [ "${CONFIGURATION}" == "DevDebug" ] || [ "${CONFIGURATION}" == "DevRelease"  ]; then
+
+cp -r "${PROJECT_DIR}/dev/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
+
+echo "Development plist copied"
+
+elif [ "${CONFIGURATION}" == "SITDebug" ] || [ "${CONFIGURATION}" == "SITRelease" ]; then
+
+cp -r "${PROJECT_DIR}/sit/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
+
+echo "SIT plist copied"
+
+elif [ "${CONFIGURATION}" == "ProdDebug" ] || [ "${CONFIGURATION}" == "ProdRelease" ]; then
+
+cp -r "${PROJECT_DIR}/prod/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
+
+echo "Production plist copied"
+
+fi
